@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @WebServlet : 브라우저에서 요청한 주소의미
  * 반드시 /(슬래시)로 시작한다.
  */
-@WebServlet({ "/FirstServlet", "/first", "/first2" })
+//@WebServlet({ "/FirstServlet", "/first", "/first2" })
 public class FirstServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class FirstServlet extends HttpServlet {
     }
 
 	public void init(ServletConfig config) throws ServletException {
-    	System.out.println("FirstServlet 초기화");
+    	System.out.println("FirstServlet 초기화!!!");
 	}
 
 
