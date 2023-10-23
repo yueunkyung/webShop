@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /*
  * @WebServlet : 브라우저에서 요청한 주소의미
  * 반드시 /(슬래시)로 시작한다.
+ * mapping 주소 설정 : 1)@WebServlet	2)web.xml 등록
  */
 //@WebServlet({ "/FirstServlet", "/first", "/first2" })
 public class FirstServlet extends HttpServlet {

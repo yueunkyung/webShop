@@ -6,6 +6,36 @@
 </head>
 <body>
 	<h1>JSP/Servlet을 이용한 web application 만들기(은경)</h1>
-	<img src="static/image/first.jpg" alt="이미지"/> 
+	
+	<ul>
+		<li>1.get요청하기(주소창에서 요청)</li>
+		<li><a href="webShop/second">2.get요청(a태그이용-절대경로)</a></li>	 <!-- 절대경로 -->
+		<li><a href="second">2.get요청(a태그이용-상대경로)</a></li>		 <!-- 상대경로 -->
+		<li>
+			<form action="second" method="get">	<!-- 상대경로 -->
+				<input type="submit" value="3.get요청(form이용)" />
+			</form>
+		</li>
+		<li>
+			<form action="second" method="post"> <!-- 상대경로 -->
+				<input type="submit" value="4.post요청(form이용)" />
+			</form>
+		</li>
+		<li>			
+			<button id="loginBtn">로그인하기</button>
+		</li>
+		<li>			
+			<button id="deptInputBtn">부서 입력</button>
+		</li>
+	</ul>
+	<script>
+		document.querySelector("#loginBtn").onclick = function() {
+			location.href = "html/login.html";
+		};
+		
+		document.querySelector("#deptInputBtn").onclick = function() {
+			location.href = "html/deptInput.html";
+		};
+	</script>
 </body>
 </html>

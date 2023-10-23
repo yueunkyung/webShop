@@ -16,6 +16,27 @@ public class EmpDAO {
 	Statement st;
 	PreparedStatement pst;
 	ResultSet rs;
+	
+	public EmpVO loginCheck(String email, int password) {
+		EmpVO emp = null;
+		String sql = "select *"
+					+ " from employees where email = ? and department_id = ?";
+		conn = DBUtil.getConnection();
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, email);
+			pst.setInt(2, password);
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				emp = makeEmp(rs);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.dbDisConnection(conn, st, rs);
+		}
+		return emp;
+	}
 
 	public EmpVO selectById(int empid) {
 		EmpVO emp = null;
