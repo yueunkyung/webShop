@@ -81,7 +81,7 @@ public class DeptDAO {
 	//모두조회
 	public List<DeptVO> selectAll() {
 		List<DeptVO> deptlist = new ArrayList<>();
-		String sql = "select * from departments";
+		String sql = "select * from departments order by 1";
 		conn = DBUtil.getConnection();
 		try {
 			st = conn.createStatement();

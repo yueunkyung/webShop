@@ -27,6 +27,15 @@
 		<li>			
 			<button id="deptInputBtn">부서 입력</button>
 		</li>
+		<li>			
+			<button onclick="location.href='dept/deptList.do';">부서 조회</button>
+		</li>
+		<li>			
+			<button id="reviewBtn">복습!!!</button>
+		</li>
+		<li>			
+			<button id="empListBtn">직원조회</button>
+		</li>
 	</ul>
 	<script>
 		document.querySelector("#loginBtn").onclick = function() {
@@ -34,7 +43,15 @@
 		};
 		
 		document.querySelector("#deptInputBtn").onclick = function() {
-			location.href = "html/deptInput.html";
+			location.href = "dept/deptInsert.do";
+		};
+		
+		document.querySelector("#reviewBtn").onclick = function() {
+			location.href = "html/input2.html";
+		};
+		
+		document.querySelector("#empListBtn").onclick = function() {
+			location.href = "./emp/empList.do";
 		};
 	</script>
 </body>

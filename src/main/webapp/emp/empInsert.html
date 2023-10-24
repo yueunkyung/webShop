@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>~직원등록~</h1>
+	<form name="empform" action="empInsert.jsp" method="get">
+		<fieldset>
+			<legend>직원의 기본사항</legend>
+			1.EMPLOYEE_ID: <input name="employee_id" type="number" min="207" max="500" autofocus /> <br><br>
+			2.FIRST_NAME: <input name="first_name" type="text" placeholder="이름/first name" /> <br><br>
+			3.LAST_NAME: <input name="last_name" type="text" placeholder="성/last name" /> <br><br>
+		</fieldset>
+		<fieldset>
+			<legend>직원의 추가정보</legend>
+			4.EMAIL: <input name="email" type="text" required placeholder="@(골뱅이) 전까지만" /> <br><br>
+			5.PHONE_NUMBER: <input name="phone_number" type="tel" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}"
+				placeholder="***.***.****" /> <br><br>
+			6.HIRE_DATE: <input name="hire_date" type="date" /> <br><br>
+			7.JOB_ID: <select name="job_id">
+				<option value="AD_VP">President</option>
+				<option value="AD_VP">Administration Vice President</option>
+				<option value="AD_ASST">Administration Assistant</option>
+				<option value="FI_MGR">Finance</option>
+				<option value="FI_ACCOUNT">Accountant</option>
+				<option value="AC_MGR">Accounting</option>
+				<option value="AC_ACCOUNT">Public Accountant</option>
+				<option value="SA_MAN">Sales Manager</option>
+				<option value="SA_REP">Sales Representative</option>
+				<option value="PU_MAN">Purchasing Manager</option>
+				<option value="PU_CLERK">Purchasing Clerk</option>
+				<option value="ST_MAN">Stock Manager</option>
+				<option value="ST_CLERK">Stock Clerk</option>
+				<option value="SH_CLERK">Shipping Clerk</option>
+				<option value="IT_PROG">Solution Programmer</option>
+				<option value="MK_MAN">Marketing Manager</option>
+				<option value="MK_REP">Marketing Representative</option>
+				<option value="HR_REP">Human Resources Representative</option>
+				<option value="PR_REP">Public Relations Representative</option>
+			</select><br><br>
+			8.SALARY: <input name="salary" type="number" placeholder="급여 정보" /> <br><br>
+			9.COMMISSION_PCT: <input name="commission_pct" type="number" step="0.01" /> <br><br>
+			10.MANAGER_ID: <input name="manager_id" type="number" /> <br><br>
+			11.DEPARTMENT_ID: <select name="department_id">
+				<option>10</option>
+				<option>20</option>
+				<option>30</option>
+				<option>40</option>
+				<option>50</option>
+				<option>60</option>
+				<option>70</option>
+				<option>80</option>
+				<option>90</option>
+				<option>100</option>
+				<option>110</option>
+				<option>없음/NULL</option>
+			</select> <br><br>
+			<input type="submit" value="등록하기♥" />
+		</fieldset>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>직원등록</title>
+	<style>
+		form span {
+			display: inline-block;
+			width: 150px;
+		}
+		form input {
+			display: inline-block;
+			width: 250px;
+			box-sizing: border-box;
+		}
+		form div.submit {
+			margin-top: 15px;
+		}
+		form div.submit input {
+			width: auto;
+			margin-left: 220px;
+		}
+		
+	</style>
+</head>
+<body>
+	<form action="empInsert.jsp">
+		<div><span>EMPLOYEE_ID:</span><input type="text" name="employee_id" required></div>
+		<div><span>FIRST_NAME:</span><input type="text" name="first_name" placeholder="길동"></div>
+		<div><span>LAST_NAME:</span><input type="text"name="last_name" placeholder="홍"></div>
+		<div><span>EMAIL:</span><input type="email" name="email"></div>
+		<div><span>PHONE_NUMBER:</span><input type="tel" name="phone_number" pattern="[01]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-0000-0000"></div>
+		<div><span>HIRE_DATE:</span><input type="date" name="hire_date"></div>
+		<div><span>JOB_ID:</span><input type="text" name="job_id" list="joblist">
+			<datalist id="joblist">
+				<option value="AD_PRES">AD_PRES</option>
+				<option value="AD_VP">AD_VP</option>
+				<option value="IT_PROG">IT_PROG</option>
+				<option value="FI_MGR">FI_MGR</option>
+				<option value="FI_ACCOUNT">FI_ACCOUNT</option>
+				<option value="PU_MAN">PU_MAN</option>
+				<option value="PU_CLERK">PU_CLERK</option>
+				<option value="ST_MAN">ST_MAN</option>
+				<option value="ST_CLERK">ST_CLERK</option>
+				<option value="SA_MAN">SA_MAN</option>
+				<option value="SA_REP">SA_REP</option>
+				<option value="SH_CLERK">SH_CLERK</option>
+				<option value="AD_ASST">AD_ASST</option>
+				<option value="MK_MAN">MK_MAN</option>
+				<option value="MK_REP">MK_REP</option>
+				<option value="HR_REP">HR_REP</option>
+				<option value="PR_REP">PR_REP</option>
+				<option value="AC_MGR">AC_MGR</option>
+				<option value="AC_ACCOUNT">AC_ACCOUNT</option>
+			</select>
+		</div>
+		<div><span>SALARY:</span><input type="text" name="salary"></div>
+		<div><span>COMMISSION_PCT:</span><input type="number" name="commission_pct" step="0.1"></div>
+		<div><span>MANAGER_ID:</span><input type="text" name="manager_id"></div>
+		<div><span>DEPARTMENT_ID:</span><input type="text" name="department_id" list="deptlist">
+			<datalist id="deptlist">
+				<option value="10" label="Administration">10</option>
+				<option value="20" label="Marketing">20</option>
+				<option value="30" label="Purchasing">30</option>
+				<option value="40" label="Human Resources">40</option>
+				<option value="50" label="Shipping">50</option>
+				<option value="60" label="IT">60</option>
+				<option value="70" label="Public Relations">70</option>
+				<option value="80" label="Sales">80</option>
+				<option value="90" label="Executive">90</option>
+				<option value="100" label="Finance">100</option>				
+				<option value="110" label="Accounting">110</option>
+				<option value="120" label="Treasury">120</option>
+				<option value="130" label="Corporate Tax">130</option>
+				<option value="140" label="Control And Credit">140</option>
+				<option value="150" label="Shareholder Services">150</option>
+				<option value="160" label="Benefits">160</option>				
+				<option value="170" label="Manufacturing">170</option>
+				<option value="180" label="Construction">180</option>
+				<option value="190" label="Contracting">190</option>
+				<option value="200" label="Operations">200</option>
+				<option value="210" label="IT Support">210</option>
+				<option value="220" label="NOC">220</option>
+				<option value="230" label="IT Helpdesk">230</option>
+				<option value="240" label="Government Sales">240</option>
+				<option value="240" label="Retail Sales">250</option>
+				<option value="240" label="Recruiting">260</option>
+				<option value="240" label="Payroll">270</option>
+			</select>
+		</div>
+		<div class="submit">
+			<input type="submit" value="직원등록">
+		</div>
+	</form>
+</body>
+
+</html>

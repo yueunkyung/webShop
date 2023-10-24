@@ -11,26 +11,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shinhan.dto.DeptVO;
 import com.shinhan.model.DeptService;
+import com.shinhan.model.EmpService;
 
-/**
- * Servlet implementation class deptInsertServlet
- */
-@WebServlet("/html/deptInsert")
+@WebServlet("/dept/deptInsert.do")
 public class DeptInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public DeptInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    //Get방식일때는 입력Form 보여주기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
+		EmpService eService = new EmpService();
+		request.setAttribute("mlist", eService.selectManagerAll());
+		
+		
+		RequestDispatcher rd;
+		rd = request.getRequestDispatcher("deptInsert.jsp");
+		rd.forward(request, response);
+	}
+
+	//Post방식일때는 DB에 저장한다.
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("utf-8");
+		
 		int deptId = convertData(request.getParameter("department_id"));
 		String dept_name = request.getParameter("department_name");
 		int mid = convertData(request.getParameter("manager_id"));
@@ -43,7 +52,7 @@ public class DeptInsertServlet extends HttpServlet {
 
 		//위임하기(요청은 Servlet 받았지만 응답은 jsp에 넘기기)
 		RequestDispatcher rd;
-		rd = request.getRequestDispatcher("../views/deptResult.jsp");
+		rd = request.getRequestDispatcher("deptResult.jsp");
 		rd.forward(request, response);
 	}
 	
@@ -51,11 +60,5 @@ public class DeptInsertServlet extends HttpServlet {
 		return Integer.parseInt(data);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
 
 }
