@@ -6,6 +6,13 @@ import com.shinhan.dto.EmpVO;
 
 public class EmpService {
 	EmpDAO dao = new EmpDAO();
+
+	public int empInsert(EmpVO emp) {
+		return dao.empInsert(emp);		
+	}
+	public int empUpdate(EmpVO emp) {
+		return dao.empUpdate(emp);		
+	}
 	public EmpVO loginCheck(String email, int password) {
 		return dao.loginCheck(email, password);
 	}

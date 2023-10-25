@@ -202,6 +202,7 @@ tbody {
 		<button id="btnClearAll">class 모두제거</button>
 		<button id="reload">reset(새로고침)</button>
 		<br>
+		<p>${empInfo.first_name}님 환영합니다.</p>
 	</div>
 	<%--
 	<div>
@@ -212,7 +213,7 @@ tbody {
 	<br>
 	<button onclick="location.href='empInsert.do';">신규직원등록</button>
 	<div id="container">
-		<h1>직원목록</h1>
+		<h1>직원목록................${sessionScope.company}</h1>
 		<table>
 			<thead>
 				<tr>

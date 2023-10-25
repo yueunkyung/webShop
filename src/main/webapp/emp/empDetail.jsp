@@ -25,8 +25,7 @@ List<EmpVO> mlist = (List<EmpVO>) request.getAttribute("mlist");
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
@@ -125,49 +124,56 @@ ul li input, ul li select {
 <body class="dis_flex">
 	<div id="container">
 		<h1>~직원 상세보기~</h1>
-		<form name="empform" action="empInsert.jsp" method="get">
+		<form name="empform" action="empDetail.do" method="post">
 			<fieldset>
 				<legend>직원의 기본사항</legend>
 				<ul>
 					<li><span>1.EMPLOYEE_ID:</span><input name="employee_id"
-						type="number" value="<%=empvo.getEmployee_id()%>" disabled /></li>
+						type="number" value="${emp.employee_id}"  /></li>
 					<li><span>2.FIRST_NAME:</span><input name="first_name"
 						type="text" placeholder="이름/first name"
-						value="<%=empvo.getFirst_name()%>" disabled /></li>
+						value="${emp.first_name}"  /></li>
 					<li><span>3.LAST_NAME:</span><input name="last_name"
 						type="text" placeholder="성/last name"
-						value="<%=empvo.getLast_name()%>" disabled /></li>
+						value="${emp.last_name}"  /></li>
 				</ul>
 			</fieldset>
 			<fieldset>
 				<legend>직원의 추가정보</legend>
 				<ul>
-					<li><span>4.EMAIL:</span><input name="email" type="text"
-						required placeholder="@(골뱅이) 전까지만" value="<%=empvo.getEmail()%>"
-						disabled /></li>
-					<li><span>5.PHONE_NUMBER:</span><input name="phone_number"
+					<li>
+						<span>4.EMAIL:</span><input name="email" type="text"
+						required value="${emp.email}"
+						 />
+					</li>
+					<li>
+						<span>5.PHONE_NUMBER:</span>
+						<input name="phone_number"
 						type="tel" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}"
-						placeholder="***.***.****" value="<%=empvo.getPhone_number()%>"
-						disabled /></li>
-					<li><span>6.HIRE_DATE:</span><input name="hire_date"
-						type="date" value="<%=empvo.getHire_date()%>" disabled /></li>
-					<li><span>7.JOB_ID:</span> <select name="job_id" disabled>
-							<%
-							for (JobVO job : joblist) {
-							%>
-							<option value="<%=job.getJob_id()%>>"
-								<%=job.getJob_id().equals(empvo.getJob_id()) ? "selected" : ""%>><%=job.getJob_title()%></option>
-							<%
-							}
-							%>
-					</select></li>
+						placeholder="***.***.****" value="${emp.phone_number}"
+						 />
+					</li>
+					<li>
+						<span>6.HIRE_DATE:</span><input name="hire_date"
+						type="date" value="${emp.hire_date}" />
+					</li>
+					<li>
+						<span>7.JOB_ID:</span>
+						<select name="job_id" >
+							<%for (JobVO job : joblist) {%>
+							<option value="<%=job.getJob_id()%>" <%=job.getJob_id().equals(empvo.getJob_id()) ? "selected" : ""%>>
+								<%=job.getJob_title()%>
+							</option>
+							<%}%>
+						</select>
+					</li>
 					<li><span>8.SALARY:</span><input name="salary" type="number"
-						placeholder="급여 정보" value="<%=empvo.getSalary()%>" disabled /></li>
+						placeholder="급여 정보" value="${emp.salary}"  /></li>
 					<li><span>9.COMMISSION_PCT:</span><input name="commission_pct"
-						type="number" step="0.01" value="<%=empvo.getCommission_pct()%>"
-						disabled /></li>
+						type="number" step="0.01" value="${emp.commission_pct}"
+						 /></li>
 					<li><span>10.MANAGER_ID:</span> <select name="manager_id"
-						disabled>
+						>
 							<%
 							for (EmpVO emp : mlist) {
 							%>
@@ -181,7 +187,7 @@ ul li input, ul li select {
 							%>
 					</select></li>
 					<li><span>11.DEPARTMENT_ID:</span> <select
-						name="department_id" disabled>
+						name="department_id" >
 							<%
 							for (DeptVO dept : dlist) {
 							%>
@@ -193,7 +199,7 @@ ul li input, ul li select {
 					</select></li>
 				</ul>
 				<div class="btn_wrap">
-					<button class="btn btn-success" type="submit">등록하기♥</button>
+					<button class="btn btn-success" type="submit">수정하기♥</button>
 					<input type="reset" class="btn btn-success" value="Reset Button" />
 				</div>
 			</fieldset>

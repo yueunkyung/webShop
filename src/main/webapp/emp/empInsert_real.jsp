@@ -124,7 +124,7 @@ ul li input, ul li select {
 <body class="dis_flex">
 	<div id="container">
 		<h1>~직원등록~</h1>
-		<form name="empform" action="empInsert.jsp" method="get">
+		<form name="empform" action="empInsert.do" method="post">
 			<fieldset>
 				<legend>직원의 기본사항</legend>
 				<ul>
@@ -142,15 +142,14 @@ ul li input, ul li select {
 					<li><span>4.EMAIL:</span><input name="email" type="text"
 						required placeholder="@(골뱅이) 전까지만" /></li>
 					<li><span>5.PHONE_NUMBER:</span><input name="phone_number"
-						type="tel" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}"
-						placeholder="***.***.****" /></li>
+						type="tel" placeholder="***.***.****" /></li>
 					<li><span>6.HIRE_DATE:</span><input name="hire_date"
 						type="date" /></li>
 					<li><span>7.JOB_ID:</span> <select name="job_id">
 							<%
 							for (JobVO job : joblist) {
 							%>
-							<option value="<%=job.getJob_id()%>>"><%=job.getJob_title()%></option>
+							<option value="<%=job.getJob_id()%>"><%=job.getJob_title()%></option>
 							<%
 							}
 							%>
