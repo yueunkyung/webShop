@@ -192,6 +192,8 @@ tbody {
 </script>
 </head>
 <body>
+
+	<a href = "../auth/logout.do">로그아웃</a>
 	<div>
 		<input id="fname" />
 		<button id="search1">시작하는 이름찾기</button>

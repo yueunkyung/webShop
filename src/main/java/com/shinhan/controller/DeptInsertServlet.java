@@ -38,7 +38,8 @@ public class DeptInsertServlet extends HttpServlet {
 	//Post방식일때는 DB에 저장한다.
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
+		// 필터 생성으로 주석처리 함
+		// request.setCharacterEncoding("utf-8");
 		
 		int deptId = convertData(request.getParameter("department_id"));
 		String dept_name = request.getParameter("department_name");

@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	session.setAttribute("loginResult", "");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +44,7 @@
 	</ul>
 	<script>
 		document.querySelector("#loginBtn").onclick = function() {
-			location.href = "views/loginCheck.do";
+			location.href = "auth/loginCheck.do";
 		};
 		
 		document.querySelector("#deptInputBtn").onclick = function() {

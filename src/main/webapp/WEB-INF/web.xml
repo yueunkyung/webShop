@@ -6,6 +6,17 @@
 	
 	<!-- Top Element : Root 아래에 있음 -->
 	
+	<!-- TimeCheckFilter -> @WebFilter("*.do") 대신 사용 -->
+	<filter>
+		<filter-name>timeF</filter-name>
+		<filter-class>com.shinhan.filter.TimeCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>timeF</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<!-- // TimeCheckFilter -> @WebFilter("*.do") 대신 사용 -->
+	
 	<context-param>
 		<param-name>dbid</param-name>
 		<param-value>hr</param-value>

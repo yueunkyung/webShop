@@ -23,6 +23,11 @@
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
     </div>
+    <!-- 
+    <input type="hidden" /> : document에 보이지 않는다.
+     -->
+    <input type="hidden" name="address" value="서울시 마포구" />
+    <input type="hidden" name="phone" value="010-7894-5623" />
     <div class="form-check mb-3">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
@@ -33,8 +38,12 @@
     
   </form>
 </div>
-
+<script>
+	// var message = "${session.loginResult}";
+	var message = "${loginResult}";
+	if(message!= "") alert(message);
 	
+</script>
 </body>
 </html>
     

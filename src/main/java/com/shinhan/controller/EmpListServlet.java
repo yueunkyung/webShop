@@ -14,19 +14,13 @@ import javax.servlet.http.HttpSession;
 import com.shinhan.dto.EmpVO;
 import com.shinhan.model.EmpService;
 
-@WebServlet("/emp/empList.do")
+//@WebServlet("/emp/empList.do")
 public class EmpListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-		Object obj = session.getAttribute("empInfo");
 		
-		if(obj == null) {
-			response.sendRedirect("../views/loginCheck.do");
-			return;
-		}
 		
 		EmpService service = new EmpService();
 		List<EmpVO> emplist = service.selectAll();
