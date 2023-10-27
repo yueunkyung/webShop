@@ -11,6 +11,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 
+//DTO(Data Transfer Object)
+//VO(ValueObject)
+//JavaBean : 자바 객체
+
 //DTO(Data Transfer Object), VO(Value Object)
 public class DeptVO {
 	private int department_id;

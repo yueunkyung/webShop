@@ -29,10 +29,11 @@ public class EmpInsertController implements CommonController{
 			EmpService eService = new EmpService();
 			EmpVO emp = (EmpVO) data.get("emp");
 			int result = eService.empInsert(emp);
-			data.put("message", result>0? "insert success":"insert fail");
+			String str = result>0? "insert success":"insert fail";
 			
 			//Redirect : 새로운 요청하기
-			page = "redirect:empList.do";
+			//한글은 url인코딩해줘야 함
+			page = "redirect:empList.do?message=" + str;
 		}
 		
 		return page;

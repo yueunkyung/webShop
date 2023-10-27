@@ -6,6 +6,15 @@
 	
 	<!-- Top Element : Root 아래에 있음 -->
 	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/error_404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/error_500.jsp</location>
+	</error-page>	
+	
 	<!-- TimeCheckFilter -> @WebFilter("*.do") 대신 사용 -->
 	<filter>
 		<filter-name>timeF</filter-name>

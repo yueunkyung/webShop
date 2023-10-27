@@ -122,6 +122,7 @@ ul li input, ul li select {
 </head>
 
 <body class="dis_flex">
+	<%@include file="../auth/logout.jsp" %>
 	<div id="container">
 		<h1>~직원등록~</h1>
 		<form name="empform" action="empInsert.do" method="post">

@@ -15,20 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 import com.shinhan.dto.EmpVO;
 import com.shinhan.util.DateUtil;
 
-@WebServlet("*.do")
+@WebServlet("*.do")	//서블릿 요청들이 오도록 *.do 코딩
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//요청방식: get, post
 		String method = request.getMethod();
+		
+		//요청주소
 		String reqPath = request.getServletPath();
+		
+		//요청마다 저장하는 데이터가 다르다
 		Map<String, Object> data = new HashMap<>();
+		
+		//모든 요청마다 업무 로직을 담당하는 Controller를 만듦
 		CommonController controller = null;
 		
 		data.put("method", method);
 		
-		System.out.println("....?"+reqPath);
+		System.out.println("FrontController......"+reqPath);
 		
+		//요청의 주소에 따라 업무로직을 호출한다.
 		switch (reqPath) {
 		case "/emp/empList.do":
 			controller = new EmpListController();
@@ -37,6 +45,14 @@ public class FrontController extends HttpServlet {
 			controller = new EmpInsertController();
 			if(method.equalsIgnoreCase("post")) {
 				data.put("emp", makeEmp(request));
+			}
+			break;
+		case "/emp/empDetail.do":
+			controller = new EmpDetailController();
+			if(method.equalsIgnoreCase("post")) {
+				data.put("emp", makeEmp(request));
+			}else {
+				data.put("empid", request.getParameter("empid"));
 			}
 			break;
 		default:
