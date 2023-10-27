@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>부서 입력</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>부서입력결과:${message}</h1>
+	<h1>부서입력 결과 : ${message}</h1>
+	<h1>부서번호: ${department_id}</h1>
+	<h1>부서이름: ${department_name}</h1>
+	<h1>매니저번호: ${manager_id}</h1>
+	<h1>지역번호: ${location_id}</h1>
 </body>
 </html>
