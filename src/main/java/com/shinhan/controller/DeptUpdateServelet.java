@@ -20,7 +20,7 @@ public class DeptUpdateServelet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//get 방식은 URL에 parameter값이 encoding되어 전달
-		// 읽을때 자동으로 decoding된다(한글깨짐없음
+		// 읽을때 자동으로 decoding된다(한글깨짐없음)
 		// post 방식은 자동아님.
 		request.setCharacterEncoding("utf-8");
 		

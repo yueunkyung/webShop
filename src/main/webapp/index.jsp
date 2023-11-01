@@ -14,7 +14,7 @@
 	
 	<ul>
 		<li>1.get요청하기(주소창에서 요청)</li>
-		<li><a href="webShop/second">2.get요청(a태그이용-절대경로)</a></li>	 <!-- 절대경로 -->
+		<li><a href="/webShop/second">2.get요청(a태그이용-절대경로)</a></li>	 <!-- 절대경로 -->
 		<li><a href="second">2.get요청(a태그이용-상대경로)</a></li>		 <!-- 상대경로 -->
 		<li>
 			<form action="second" method="get">	<!-- 상대경로 -->

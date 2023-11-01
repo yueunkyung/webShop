@@ -145,7 +145,6 @@ tbody {
 				}
 			});
 		}
-		;
 
 		function f2(event) {
 			var event = event || window.event;
@@ -170,7 +169,6 @@ tbody {
 				}
 			});
 		}
-		;
 
 		function f3() {
 			//이벤트 호출
@@ -196,7 +194,7 @@ tbody {
 	<%@include file="../auth/logout.jsp" %>
 	
 	<!-- 2)jsp표준태그: 각각을 자바 파일로 만든다.(변수 공유 불가) -->
-	<!--<jsp:include page="../auth/logout.jsp"></jsp:include>-->
+	<%--<jsp:include page="../auth/logout.jsp"></jsp:include>--%>
 	
 	<div>
 		<input id="fname" />
